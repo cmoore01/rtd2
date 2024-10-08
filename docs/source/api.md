@@ -7,5 +7,6 @@
    lumache
 ```
 
-.. openapi:: specs/openapi.yml
+```{openapi} specs/openapi.yml
+```
 
