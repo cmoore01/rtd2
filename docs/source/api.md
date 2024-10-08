@@ -5,6 +5,9 @@
    :toctree: generated
 
    lumache
-.. openapi:: specs/openapi.yml
 ```
+Attempt to render openapi spec below:
 
+```{openapi} specs/openapi.yml
+:format: markdown
+```
