@@ -8,5 +8,6 @@
 ```
 
 ```{openapi} specs/openapi.yml
+:format: markdown
 ```
 
