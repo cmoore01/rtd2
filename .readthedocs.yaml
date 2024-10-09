@@ -5,7 +5,6 @@ build:
   apt_packages: [openjdk-21-jdk]
   tools:
     python: "3.10"
-    java: "openjdk21"
   commands: [theoretical-microservice-1/gradlew generateOpenApiDocs]
 
 python:
