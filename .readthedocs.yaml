@@ -5,7 +5,10 @@ build:
   apt_packages: [openjdk-21-jdk]
   tools:
     python: "3.10"
-  commands: [theoretical-microservice-1/gradlew generateOpenApiDocs]
+  jobs:
+    pre_build:
+      - theoretical-microservice-1/gradlew generateOpenApiDocs
+  #commands: [theoretical-microservice-1/gradlew generateOpenApiDocs]
 
 python:
   install:
