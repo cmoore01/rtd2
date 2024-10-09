@@ -4,6 +4,8 @@ build:
   os: "ubuntu-22.04"
   tools:
     python: "3.10"
+  commands:
+    - theoretical-microservice-1/gradlew generateOpenApiDocs
 
 python:
   install:

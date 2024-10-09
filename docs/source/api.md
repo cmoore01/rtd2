@@ -6,5 +6,5 @@
 
    lumache
 
-.. openapi:: specs/openapi.yml
+.. openapi:: ../../theoretical-microservice-1/build/openapi.yml
 ```
