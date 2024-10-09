@@ -2,20 +2,12 @@ import pathlib
 import sys
 sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 
-# Configuration file for the Sphinx documentation builder.
+project = 'XNAT Scout'
+copyright = '????, ?????'
+author = 'TAG@WashU'
 
-# -- Project information
-
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
-
-release = '0.1'
-version = '0.1.0'
-
-# -- General configuration
-
-source_suffix = ['.rst', '.md']
+release = '0.0'
+version = '0.0'
 
 extensions = [
     'sphinx.ext.duration',
@@ -35,9 +27,6 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-# -- Options for HTML output
-
 html_theme = 'sphinx_rtd_theme'
 
-# -- Options for EPUB output
 epub_show_urls = 'footnote'

@@ -4,33 +4,24 @@
 
 ## Installation
 
-To use Lumache, first install it using pip:
+A theoretical command to install Scout (not intended to make sense):
 
-```console
-(.venv) $ pip install lumache
+```{code-block} shell-session
+:caption: Scout Installation Procedure
+:emphasize-lines: 3
+:lineno-start: 1
+
+$ pip install scout
+$ /some/command/thing
+$ ./critical-step.sh
 ```
 
-## Creating recipes
+## Python SDK
 
-To retrieve a list of random ingredients,
-you can use the `lumache.get_random_ingredients()` function:
-
-```{eval-rst}
-.. autofunction:: lumache.get_random_ingredients
-```
-
-The `kind` parameter should be either `"meat"`, `"fish"`,
-or `"veggies"`. Otherwise, {py:func}`lumache.get_random_ingredients`
-will raise an exception.
-
-```{eval-rst}
-.. autoexception:: lumache.InvalidKindError
-```
-
-For example:
+A theoretical python session for an SDK talking to a Scout instance:
 
 ```pycon
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+>>> import xnatscout
+>>> xnatscout.authenticate('admin', 'admin').study_count()
+823772
 ```
