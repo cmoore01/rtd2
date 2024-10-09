@@ -6,9 +6,7 @@ build:
   tools:
     python: "3.10"
   jobs:
-    pre_build:
-      - cd theoretical-microservice-1
-      - ./gradlew generateOpenApiDocs
+    pre_build: [cd theoretical-microservice-1 && ./gradlew generateOpenApiDocs]
 
 python:
   install:
