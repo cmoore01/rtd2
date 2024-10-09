@@ -2,11 +2,11 @@ version: "2"
 
 build:
   os: "ubuntu-22.04"
+  apt_packages: [openjdk-21-jdk]
   tools:
     python: "3.10"
     java: "openjdk21"
-  commands:
-    - theoretical-microservice-1/gradlew generateOpenApiDocs
+  commands: [theoretical-microservice-1/gradlew generateOpenApiDocs]
 
 python:
   install:
