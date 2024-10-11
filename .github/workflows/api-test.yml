@@ -11,8 +11,12 @@ env:
   JAVA_VERSION: '21'
 
 jobs:
-  deploy-test-instance:
+  deploy-test-instance-test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        executorId: [ 0, 1 ]
     steps:
       - uses: actions/checkout@v4.2.1
       - uses: actions/setup-java@v4
@@ -24,25 +28,7 @@ jobs:
           cd theoretical-microservice-1
           nohup ./gradlew bootRun &
           for attempt in {1..30}; do sleep 1; if curl http://localhost:8080/greeting -v --fail-with-body; then echo "App seems to be up"; break; fi; echo "waiting for app..."; done
-      - name: Run tests
-        run: |
-          cd api-tests
-          ./gradlew test
-
-  run-tests-parallel:
-    runs-on: ubuntu-latest
-    needs: deploy-test-instance
-    strategy:
-      fail-fast: false
-      matrix:
-        executorId: [0, 1]
-    steps:
-      - uses: actions/checkout@v4.2.1
-      - uses: actions/setup-java@v4
-        with:
-          distribution: ${{ ENV.JAVA_DIST }}
-          java-version: ${{ ENV.JAVA_VERSION }}
-      - name: Subtest job
+      - name: Run subset of tests
         run: |
           cd api-tests
           ./gradlew test -DtotalNodes=2 -DexecutorId=${{ matrix.executorId }}
