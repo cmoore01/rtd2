@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class TestExample extends BaseTestCase {
+public class TestAnotherThing extends BaseTestCase {
 
     @Test
     public void testThing() {

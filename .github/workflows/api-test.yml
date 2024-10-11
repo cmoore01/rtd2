@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  deploy-test-server:
+  deploy-test-instance:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,3 +24,14 @@ jobs:
         run: |
           cd api-tests
           ./gradlew test
+
+  run-tests-parallel:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        executorId: [0, 1]
+    steps:
+      run: |
+        cd api-tests
+        ./gradlew test -DtotalNodes=2 -DexecutorId=${{ matrix.executorId }}
