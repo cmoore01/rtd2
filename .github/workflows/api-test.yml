@@ -32,6 +32,7 @@ jobs:
       matrix:
         executorId: [0, 1]
     steps:
-      run: |
-        cd api-tests
-        ./gradlew test -DtotalNodes=2 -DexecutorId=${{ matrix.executorId }}
+      - name: Subtest job
+        run: |
+          cd api-tests
+          ./gradlew test -DtotalNodes=2 -DexecutorId=${{ matrix.executorId }}
